@@ -19,7 +19,7 @@
   --light-border:#e0dedd;
 }
 html{scroll-behavior:smooth}
-body{background:var(--white);color:var(--black);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+body{background:var(--white);color:var(--black);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;word-break:break-word;overflow-wrap:break-word}
 
 /* ── CURSOR (desktop only) ── */
 @media(hover:hover) and (pointer:fine){
@@ -206,7 +206,7 @@ nav{
 }
 .expertise-list{display:flex;flex-direction:column}
 .expertise-row{
-  display:grid;grid-template-columns:80px 260px 1fr;
+  display:grid;grid-template-columns:64px 220px 1fr;
   align-items:start;gap:32px;
   padding:40px 0;border-top:1px solid var(--light-border)
 }
@@ -221,14 +221,16 @@ nav{
 }
 .exp-desc{
   font-size:15px;font-weight:300;color:#555;
-  line-height:1.75;max-width:640px
+  line-height:1.75;max-width:640px;
+  overflow-wrap:break-word;word-break:normal
 }
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .tag{
   font-family:'DM Mono',monospace;font-size:10px;
-  letter-spacing:0.1em;text-transform:uppercase;
+  letter-spacing:0.08em;text-transform:uppercase;
   color:var(--black);border:1px solid var(--black);
-  padding:5px 14px;border-radius:100px
+  padding:5px 12px;border-radius:100px;
+  white-space:nowrap
 }
 
 /* ── IMPACT ── */
@@ -406,87 +408,52 @@ footer{
   nav{padding:0 20px}
   .nav-links{display:none}
 
-  /* HERO */
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-photo-col{display:none}
-  .hero-left{padding:48px 20px 40px}
-  .hero-headline{font-size:clamp(60px,18vw,88px);margin-bottom:24px}
-  .hero-tagline{font-size:15px}
+  .hero{display:flex;flex-direction:column;min-height:auto}
+  .hero-left{padding:48px 20px 36px;order:1}
+  .hero-photo-col{order:2;display:block !important;width:100% !important;height:280px;flex-shrink:0}
+  .hero-photo-col img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+  .hero-headline{font-size:clamp(52px,14vw,76px);margin-bottom:20px}
+  .hero-tagline{font-size:15px;max-width:100%}
   .hero-btns{gap:10px}
-  .btn{padding:12px 22px;font-size:12px}
+  .btn{padding:12px 20px;font-size:11px}
 
-  /* HERO PHOTO - show on mobile as full width block */
-  .hero-photo-col{
-    display:block;
-    width:100%;
-    height:320px
-  }
-  .hero-photo-col img{
-    object-position:50% 15%
-  }
+  .logo-bar-item{padding:14px 28px}
 
-  /* SECTIONS */
-  .section-pad,
-  .expertise,
-  .impact,
-  .experience,
-  .about,
-  .cta-section{padding:56px 20px}
-  .section-heading{font-size:clamp(48px,12vw,72px);margin-bottom:40px}
+  .section-pad,.expertise,.impact,.experience,.about,.cta-section{padding:48px 20px}
+  .section-heading{font-size:clamp(40px,11vw,60px);margin-bottom:28px}
 
-  /* EXPERTISE */
-  .expertise-intro{grid-template-columns:1fr;gap:16px;margin-bottom:40px}
-  .expertise-row{
-    grid-template-columns:40px 1fr;
-    gap:12px;padding:28px 0
-  }
-  .exp-desc{grid-column:2}
-  .tag-row{gap:6px}
-  .tag{font-size:9px;padding:4px 10px}
+  .expertise-intro{grid-template-columns:1fr;gap:12px;margin-bottom:28px}
+  .expertise-row{display:flex !important;flex-direction:column;gap:10px;padding:24px 0}
+  .exp-num{font-size:13px}
+  .exp-title{font-size:20px}
+  .exp-desc{font-size:14px;max-width:100%;line-height:1.65}
+  .tag{font-size:9px;padding:4px 10px;white-space:nowrap}
 
-  /* IMPACT */
-  .impact-row{
-    grid-template-columns:1fr;
-    gap:8px;padding:32px 0
-  }
+  .impact-row{display:flex !important;flex-direction:column;gap:6px;padding:24px 0}
   .impact-num{font-size:clamp(44px,12vw,60px)}
   .impact-source{display:none}
+  .impact-desc{font-size:14px}
 
-  /* EXPERIENCE */
   .exp-cols{grid-template-columns:1fr}
   .exp-col{padding:0}
-  .exp-col+.exp-col{
-    border-left:none;
-    border-top:1px solid var(--light-border);
-    padding:0
-  }
-  .exp-period{padding:20px 0 16px}
-  .skills-ticker-wrap{margin-top:40px}
-  .sk-item{font-size:15px}
+  .exp-col+.exp-col{border-left:none;border-top:1px solid var(--light-border);padding-top:0}
+  .exp-period{padding:20px 0 12px}
+  .exp-entry-title{font-size:14px}
+  .skills-ticker-wrap{margin-top:28px}
+  .sk-item{font-size:13px}
 
-  /* ABOUT */
-  .about-inner{gap:32px}
+  .about-inner{gap:24px}
+  .about-card{padding:20px}
   .about-card-cols{grid-template-columns:1fr}
-  .about-line:nth-last-child(-n+2){border-bottom:1px solid var(--light-border)}
-  .about-line:last-child{border-bottom:none}
+  .about-line{padding:12px 0}
+  .about-line-text{font-size:14px}
 
-  /* CTA */
-  .cta-inner{grid-template-columns:1fr;gap:32px}
-  .cta-headline{font-size:clamp(48px,13vw,72px)}
-  .cta-right{max-width:100%}
-  .cta-btns{flex-direction:row;flex-wrap:wrap}
+  .cta-inner{grid-template-columns:1fr;gap:24px}
+  .cta-headline{font-size:clamp(40px,12vw,60px)}
+  .cta-right{max-width:100%;font-size:14px}
+  .cta-btns{flex-direction:column;gap:10px}
 
-  /* FOOTER */
   footer{padding:20px;flex-direction:column;gap:8px;text-align:center}
-}
-
-@media(max-width:480px){
-  .hero-headline{font-size:clamp(52px,16vw,72px)}
-  .section-heading{font-size:clamp(40px,13vw,56px)}
-  .expertise-row{grid-template-columns:1fr;gap:8px}
-  .exp-num{display:none}
-  .impact-num{font-size:52px}
-  .cta-headline{font-size:clamp(40px,13vw,60px)}
 }
 </style>
 </head>
@@ -517,7 +484,7 @@ footer{
     <div class="hero-btns">
       <a href="mailto:suzannah.sparks@gmail.com" class="btn btn-black" onclick="window.location.href='mailto:suzannah.sparks@gmail.com';return false;">Let's Chat <span class="btn-arrow">→</span></a>
       <a href="#expertise" class="btn btn-outline">The Work</a>
-      <a href="https://linkedin.com/in/suzannahsparks" class="btn btn-outline" target="_blank">LinkedIn ↗</a>
+      <a href="https://linkedin.com/in/suzannahsparks" class="btn btn-outline" target="_blank">LinkedIn</a>
     </div>
   </div>
   <div class="hero-photo-col">
@@ -548,7 +515,7 @@ footer{
   <div class="section-heading">WHAT I<br><span class="red">DO.</span></div>
   <div class="expertise-intro">
     <div></div>
-    <p class="expertise-intro-body">I'm a full-stack operator and creator. I design and run programs and projects, while crafting the story: the strategy, systems, words, and design that carry them.</p>
+    <p class="expertise-intro-body">I'm a full-stack operator, facilitator, and creator. I design and run programs from the ground up, advise on strategy and organizational design, and craft the story that carries it all — the systems, words, and visuals that make it land. Currently also serving as Director of Operations for GlowDecoded, a consumer supplement brand.</p>
   </div>
   <div class="expertise-list">
     <div class="expertise-row reveal">
@@ -694,8 +661,8 @@ footer{
         <div class="exp-entry-meta">Dropbox · <span>2024–2025</span></div>
       </div>
       <div class="exp-entry reveal">
-        <div class="exp-entry-title">Operations Director</div>
-        <div class="exp-entry-meta">Independent · <span>2025–Present</span></div>
+        <div class="exp-entry-title">Director of Operations</div>
+        <div class="exp-entry-meta">GlowDecoded · <span>2025–Present</span></div>
       </div>
     </div>
   </div>
@@ -783,7 +750,7 @@ footer{
       <p class="cta-avail">Currently open to full-time roles and select freelance work. Based in Chicago and frequently in LA + CDMX. Open to relocation.</p>
       <div class="cta-btns">
         <a href="mailto:suzannah.sparks@gmail.com" class="btn btn-white">Get in Touch →</a>
-        <a href="https://linkedin.com/in/suzannahsparks" class="btn btn-outline-white" target="_blank">LinkedIn ↗</a>
+        <a href="https://linkedin.com/in/suzannahsparks" class="btn btn-outline-white" target="_blank">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -794,9 +761,15 @@ footer{
 </footer>
 
 <script>
-// Custom cursor
+// Custom cursor - desktop only
+const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
+if (isTouchDevice) {
+  cursor.style.display = 'none';
+  ring.style.display = 'none';
+  document.body.style.cursor = 'auto';
+}
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{
   mx=e.clientX;my=e.clientY;
