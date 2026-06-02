@@ -408,9 +408,9 @@ footer{
   nav{padding:0 20px}
   .nav-links{display:none}
 
-  .hero{display:flex;flex-direction:column;min-height:auto}
-  .hero-left{padding:48px 20px 36px;order:2}
-  .hero-photo-col{order:1;display:block !important;width:100% !important;height:340px;flex-shrink:0}
+  .hero{display:grid;grid-template-columns:1fr 140px;min-height:auto}
+  .hero-left{padding:36px 16px 36px 20px}
+  .hero-photo-col{display:block !important;width:140px !important;height:auto;flex-shrink:0}
   .hero-photo-col img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
   .hero-headline{font-size:clamp(52px,14vw,76px);margin-bottom:20px}
   .hero-tagline{font-size:15px;max-width:100%}
