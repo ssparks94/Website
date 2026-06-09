@@ -305,9 +305,26 @@ nav{
   display:flex;align-items:baseline;gap:16px;
   padding:16px 24px 16px 0;border-bottom:1px solid var(--light-border)
 }
-.about-line:nth-last-child(-n+2){border-bottom:none}
+.about-line:nth-last-child(-n+1){border-bottom:none}
 .about-dash{color:var(--red);font-weight:700;font-size:18px;flex-shrink:0}
 .about-line-text{font-size:15px;font-weight:300;color:var(--mid)}
+
+/* ── HIGHLIGHTS ── */
+.highlights-row{
+  display:flex;flex-direction:column;gap:0;
+  margin:20px 0 16px;
+  border-top:1px solid var(--light-border);
+  padding-top:16px
+}
+.highlight-item{
+  display:flex;align-items:baseline;gap:12px;
+  font-size:13px;font-weight:400;color:#333;
+  line-height:1.65;
+  padding:8px 0;
+  border-bottom:1px solid var(--light-border)
+}
+.highlight-item:last-child{border-bottom:none}
+.highlight-dash{color:var(--red);font-weight:700;font-size:14px;flex-shrink:0}
 
 /* ── CTA SECTION ── */
 .cta-section{
@@ -448,6 +465,9 @@ footer{
   .about-line{padding:12px 0}
   .about-line-text{font-size:14px}
 
+  .highlights-row{margin:14px 0 12px;padding-top:12px}
+  .highlight-item{font-size:12px;padding:6px 0}
+
   .cta-inner{grid-template-columns:1fr;gap:24px}
   .cta-headline{font-size:clamp(40px,12vw,60px)}
   .cta-right{max-width:100%;font-size:14px}
@@ -483,7 +503,6 @@ footer{
     </div>
     <div class="hero-btns">
       <a href="mailto:suzannah.sparks@gmail.com" class="btn btn-black" onclick="window.location.href='mailto:suzannah.sparks@gmail.com';return false;">Let's Chat <span class="btn-arrow">→</span></a>
-      <a href="#expertise" class="btn btn-outline">The Work</a>
       <a href="https://linkedin.com/in/suzannahsparks" class="btn btn-outline" target="_blank">LinkedIn</a>
     </div>
   </div>
@@ -515,28 +534,55 @@ footer{
   <div class="section-heading">WHAT I<br><span class="red">DO.</span></div>
   <div class="expertise-intro">
     <div></div>
-    <p class="expertise-intro-body">I'm a full-stack operator, facilitator, and creator. I design and run programs from the ground up, advise on strategy and organizational design, and craft the story that carries it all — the systems, words, and visuals that make it land. Currently also serving as Director of Operations for GlowDecoded, a consumer supplement brand.</p>
+    <p class="expertise-intro-body">Call me a business swiss army knife. Whether deep diving into operational complexity, re-budgeting after a seismic business change, or debating the best font with the creative team, I like to wear many hats. The through-line: building programs that take ambiguity to architecture, designing the experiences that make them land, growing the people inside them, and telling the story that carries it all. I flex toward what's needed and grow with the organization around me.</p>
   </div>
   <div class="expertise-list">
     <div class="expertise-row reveal">
       <div class="exp-num">01</div>
       <div class="exp-title">Program &amp; Operations</div>
       <div>
-        <p class="exp-desc">Taking ambiguous problems and building structured, scalable solutions from scratch: the operating rhythm, the systems, and the follow-through that turn strategy into shipped programs. Keeping them moving on time and on budget through resourcing, vendors, and frequently flexing priorities.</p>
+        <p class="exp-desc">I build the thing and keep it running. Whether it's a net-new program, a broken process, or a strategy that needs an operator to land it, I work from ambiguity to architecture. I've run roadmap alignment with VP and C-suite stakeholders, built operating rhythms from scratch, managed vendors and budgets, and shipped programs that actually stuck.</p>
+        <div class="highlights-row">
+          <div class="highlight-item"><span class="highlight-dash">—</span> Owned and managed $2M+ across high-visibility executive initiatives at Lyft, overseeing contracting, resourcing, and end-to-end operational execution</div>
+          <div class="highlight-item"><span class="highlight-dash">—</span> Architected and launched the people team operating rhythm at Zendesk, building the infrastructure that kept a distributed org aligned and moving</div>
+        </div>
         <div class="tag-row">
           <span class="tag">Program Management</span>
           <span class="tag">Ops Optimization</span>
           <span class="tag">Budget &amp; Resourcing</span>
           <span class="tag">Change Management</span>
-          <span class="tag">Stakeholder Management</span>
+          <span class="tag">Stakeholder Alignment</span>
         </div>
       </div>
     </div>
     <div class="expertise-row reveal reveal-delay-1">
       <div class="exp-num">02</div>
+      <div class="exp-title">Enablement &amp; Facilitation</div>
+      <div>
+        <p class="exp-desc">I design the experience and deliver it: live, virtual, and everything in between. I've built onboarding programs, coaching playbooks, manager toolkits, and rep-ready resources that teams actually use. I train facilitators too, so the program scales past me. If the goal is behavior change, I build toward that outcome from the first design decision.</p>
+        <div class="highlights-row">
+          <div class="highlight-item"><span class="highlight-dash">—</span> Designed and facilitated a coaching and feedback training program for Dropbox managers; 95% reported immediate applicability to their role</div>
+          <div class="highlight-item"><span class="highlight-dash">—</span> Saved $200K by upskilling 10 internal facilitators, reducing reliance on external vendors</div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Sales Enablement</span>
+          <span class="tag">Onboarding Design</span>
+          <span class="tag">Coaching Playbooks</span>
+          <span class="tag">Workshop Facilitation</span>
+          <span class="tag">Instructional Design</span>
+          <span class="tag">Train-The-Facilitator</span>
+        </div>
+      </div>
+    </div>
+    <div class="expertise-row reveal reveal-delay-2">
+      <div class="exp-num">03</div>
       <div class="exp-title">Talent &amp; Development</div>
       <div>
-        <p class="exp-desc">Growing people at every level — executive, manager, and individual development — plus the onboarding and learning ecosystems around them. Data-driven and built to move real metrics: retention, manager effectiveness, and how fast people grow.</p>
+        <p class="exp-desc">I've built the programs that move the needle on how fast people grow and how long they stay. Executive onboarding, manager development, underrepresented talent acceleration: all of it data-informed, all of it designed to move real metrics. I understand what good looks like at every level and I build toward it.</p>
+        <div class="highlights-row">
+          <div class="highlight-item"><span class="highlight-dash">—</span> Cut early leadership attrition from 19% to 9% with a data-driven executive onboarding program for 15 VPs at Dropbox</div>
+          <div class="highlight-item"><span class="highlight-dash">—</span> 15 off-cycle promotions through an end-to-end underrepresented talent acceleration program at Zendesk</div>
+        </div>
         <div class="tag-row">
           <span class="tag">Executive Development</span>
           <span class="tag">Manager Development</span>
@@ -546,74 +592,30 @@ footer{
         </div>
       </div>
     </div>
-    <div class="expertise-row reveal reveal-delay-2">
-      <div class="exp-num">03</div>
+    <div class="expertise-row reveal reveal-delay-3">
+      <div class="exp-num">04</div>
       <div class="exp-title">Creative &amp; Content</div>
       <div>
-        <p class="exp-desc">The maker half (and yes, this covers your PowerPoint too.) Full-cycle content from scripting and filming to editing and publishing, plus copywriting and executive comms. And the look of the program itself: visuals and decks people enjoy sitting through. If it needs to look good and sound good, I create it.</p>
+        <p class="exp-desc">The maker half, and yes, this covers your deck too. Full-cycle content from scripting and filming to editing and publishing, plus copywriting and executive comms. And the look of the program itself: visuals and presentations people actually enjoy sitting through. If it needs to look good and sound good, I make it.</p>
+        <div class="highlights-row">
+          <div class="highlight-item"><span class="highlight-dash">—</span> Visual design and decks across product launches, SKOs, and org-wide initiatives</div>
+          <div class="highlight-item"><span class="highlight-dash">—</span> Executive and launch communications for VP and C-suite audiences across Dropbox, Lyft, and Zendesk, from strategy to final copy</div>
+        </div>
         <div class="tag-row">
           <span class="tag">Copywriting</span>
           <span class="tag">Decks &amp; Visual Design</span>
           <span class="tag">Social &amp; Video</span>
-          <span class="tag">Strategic Comms</span>
-          <span class="tag">Storytelling &amp; Metrics</span>
+          <span class="tag">Executive Comms</span>
+          <span class="tag">Storytelling</span>
         </div>
       </div>
-    </div>
-    <div class="expertise-row reveal reveal-delay-3">
-      <div class="exp-num">04</div>
-      <div class="exp-title">Facilitation &amp; Enablement</div>
-      <div>
-        <p class="exp-desc">Designing the workshop and delivering it to the room — both virtual and in real life. Workshops, cohorts, and retreats that feel and sound human instead of like HR word salad. And teaching others to run them too.</p>
-        <div class="tag-row">
-          <span class="tag">Workshop Design</span>
-          <span class="tag">Cohort Facilitation</span>
-          <span class="tag">Facilitation Training</span>
-          <span class="tag">Train-The-Facilitator</span>
-          <span class="tag">Instructional Design</span>
-          <span class="tag">Coaching Partnerships</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- IMPACT -->
-<section class="impact section-pad reveal" id="impact">
-  <span class="section-label"><span class="label-num">№02</span> — Impact</span>
-  <div class="section-heading">THE<br><span class="red">NUMBERS.</span></div>
-  <div class="impact-list">
-    <div class="impact-row reveal">
-      <div class="impact-num">19<span class="red">→9%</span></div>
-      <div class="impact-desc">Cut early leadership attrition with a data-driven executive onboarding &amp; performance program for 15 VPs.</div>
-      <div class="impact-source">Dropbox · Talent Dev</div>
-    </div>
-    <div class="impact-row reveal reveal-delay-1">
-      <div class="impact-num">$200<span class="red">K</span></div>
-      <div class="impact-desc">Saved by designing a facilitation training program and upskilling 10 internal facilitators — reducing reliance on external vendors.</div>
-      <div class="impact-source">Dropbox · Learning Ops</div>
-    </div>
-    <div class="impact-row reveal reveal-delay-2">
-      <div class="impact-num">+35<span class="red">%</span></div>
-      <div class="impact-desc">Lift in enablement program effectiveness by building survey and feedback loops that drove iterative redesign.</div>
-      <div class="impact-source">Dropbox · Learning Ops</div>
-    </div>
-    <div class="impact-row reveal reveal-delay-3">
-      <div class="impact-num">15<span class="red">×</span></div>
-      <div class="impact-desc">Off-cycle promotions delivered through an end-to-end underrepresented talent acceleration program — design, facilitation, and coaching.</div>
-      <div class="impact-source">Zendesk · L&amp;TD</div>
-    </div>
-    <div class="impact-row reveal">
-      <div class="impact-num">$2<span class="red">M+</span></div>
-      <div class="impact-desc">Budget owned across executive-led initiatives — contracting, resourcing, and operational execution.</div>
-      <div class="impact-source">Lyft · Comms &amp; Ops</div>
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCE + SKILLS -->
 <section class="experience section-pad reveal" id="experience">
-  <span class="section-label"><span class="label-num">№03</span> — Experience &amp; Skills</span>
+  <span class="section-label"><span class="label-num">№02</span> — Experience &amp; Skills</span>
   <div class="section-heading">THE<br><span class="red">BACKGROUND.</span></div>
   <div class="exp-cols">
     <div class="exp-col">
@@ -724,18 +726,20 @@ footer{
 <section class="about section-pad reveal" id="about">
   <div class="about-inner">
     <div>
-      <span class="section-label"><span class="label-num">№04</span> — About</span>
+      <span class="section-label"><span class="label-num">№03</span> — About</span>
       <h2 class="about-headline">GREAT WORK IS BETTER WHEN YOU WORK WITH GREAT PEOPLE.</h2>
     </div>
     <div class="about-card reveal">
       <div class="about-card-label">More About Me</div>
       <div class="about-card-cols">
         <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">Chicago based — open to relocation</span></div>
-        <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">Runner, hiker, skier</span></div>
+        <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">Endurance athlete</span></div>
+        <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">Recovering distance runner (long story — ask me)</span></div>
         <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">Master embroiderer</span></div>
-        <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">Substack writer &amp; Goodreads junky</span></div>
+        <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">Obsessive reader &amp; Substack writer</span></div>
+        <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">Hospice volunteer</span></div>
         <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">IEQ9 Accredited · ADT Master Instructional Designer</span></div>
-        <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">Eternal optimist</span></div>
+        <div class="about-line"><span class="about-dash">—</span><span class="about-line-text">Chronic optimist</span></div>
       </div>
     </div>
   </div>
